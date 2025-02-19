@@ -1,5 +1,4 @@
 import { TopBar } from '@/components/TopBar';
-import { SearchSidebar } from './SearchSidebar';
 import { ReactNode, use } from 'react';
 import { FilterBar } from './FilterBar';
 
@@ -9,7 +8,7 @@ export default function SearchLayout({ children, params }: { children: ReactNode
   return (
     <>
       <TopBar initialSearchValue={query} />
-      <main className="container mx-auto pt-12 space-y-8">
+      <main className="container mx-auto pt-12 space-y-8 px-4 md:px-8 pb-16">
         <FilterBar />
         {children}
       </main>

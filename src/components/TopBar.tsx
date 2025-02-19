@@ -8,7 +8,7 @@ export type TopBarProps = {
 
 export function TopBar({ initialSearchValue }: TopBarProps) {
   return (
-    <header className="px-12 py-4 border-b shadow flex items-center gap-12 justify-between">
+    <header className="px-4 md:px-8 py-4 border-b shadow flex items-center gap-12 justify-between">
       <Link className="basis-48 flex-shrink-0" href="/">
         <Logo hideTextOnMobile />
       </Link>
