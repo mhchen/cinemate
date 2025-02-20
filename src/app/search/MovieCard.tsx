@@ -10,7 +10,7 @@ function isoDurationToRuntime(isoDuration: string | null | undefined) {
   const result = isoDuration.match(ISO_RUNTIME_RE)?.map(Number);
   if (!result) return null;
 
-  const [_, hours, minutes] = result;
+  const [, hours, minutes] = result;
   const totalMinutes = (hours || 0) * 60 + minutes
   return `${totalMinutes} min`;
 }
