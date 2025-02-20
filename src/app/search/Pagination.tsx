@@ -1,12 +1,14 @@
 'use client';
 
-import { Button } from '@/components/Button';
+import { CmButton } from '@/components/CmButton';
 import { MoviesQueryQuery } from '@/gql/graphql';
 import { useRouterPush } from '@/hooks/useRouterPush';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 
 export type PaginationProps = {
-  pagination: NonNullable<NonNullable<MoviesQueryQuery['movies']>['pagination']>;
+  pagination: NonNullable<
+    NonNullable<MoviesQueryQuery['movies']>['pagination']
+  >;
 };
 
 export default function Pagination({ pagination }: PaginationProps) {
@@ -23,15 +25,25 @@ export default function Pagination({ pagination }: PaginationProps) {
 
   return (
     <nav className="flex justify-between md:justify-start items-center gap-4">
-      <Button variant="neutral" size="small" disabled={page === 1} onClick={() => handlePageUpdate(page - 1)}>
+      <CmButton
+        variant="neutral"
+        size="small"
+        disabled={page === 1}
+        onClick={() => handlePageUpdate(page - 1)}
+      >
         <IconChevronLeft />
-      </Button>
+      </CmButton>
       <div>
         <strong>{pagination.page}</strong> of {pagination.totalPages}
       </div>
-      <Button variant="neutral" size="small" disabled={page === totalPages} onClick={() => handlePageUpdate(page + 1)}>
+      <CmButton
+        variant="neutral"
+        size="small"
+        disabled={page === totalPages}
+        onClick={() => handlePageUpdate(page + 1)}
+      >
         <IconChevronRight />
-      </Button>
+      </CmButton>
     </nav>
   );
 }

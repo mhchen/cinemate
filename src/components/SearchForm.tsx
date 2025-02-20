@@ -1,14 +1,16 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
-import { Button } from './Button';
+import { CmButton } from './CmButton';
 import { IconSearch } from '@tabler/icons-react';
 import { useRouterPush } from '@/hooks/useRouterPush';
 import { useSearchParams } from 'next/navigation';
 
-export function Search() {
+export function SearchForm() {
   const searchParams = useSearchParams();
-  const [searchValue, setSearchValue] = useState(searchParams.get('search') ?? '');
+  const [searchValue, setSearchValue] = useState(
+    searchParams.get('search') ?? ''
+  );
 
   const routerPush = useRouterPush();
   const handleSearch = (e: FormEvent) => {
@@ -31,10 +33,10 @@ export function Search() {
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      <Button className="absolute top-1/2 right-4 -translate-y-1/2 flex gap-2 items-center">
+      <CmButton className="absolute top-1/2 right-4 -translate-y-1/2 flex gap-2 items-center">
         <IconSearch size={16} />
         <span className="sr-only md:not-sr-only">Search</span>
-      </Button>
+      </CmButton>
     </form>
   );
 }

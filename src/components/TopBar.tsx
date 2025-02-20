@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { Logo } from './Logo';
-import { Search } from './Search';
-import { Icon } from './Icon';
+import { CmLogo } from './CmLogo';
+import { SearchForm } from './SearchForm';
+import { CmIcon } from './CmIcon';
 import { Suspense } from 'react';
 
 export function TopBar() {
@@ -10,16 +10,16 @@ export function TopBar() {
       <div className="basis-12 md:basis-48 flex-shrink-0">
         <Link href="/">
           <span className="md:hidden">
-            <Icon />
+            <CmIcon />
           </span>
           <span className="hidden md:block">
-            <Logo />
+            <CmLogo />
           </span>
         </Link>
       </div>
       <div className="w-full max-w-xl">
         <Suspense>
-          <Search />
+          <SearchForm />
         </Suspense>
       </div>
     </header>

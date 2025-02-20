@@ -2,7 +2,7 @@ import { IconChevronDown } from '@tabler/icons-react';
 import { cx } from 'class-variance-authority';
 import { SelectHTMLAttributes } from 'react';
 
-export function Select(props: SelectHTMLAttributes<HTMLSelectElement>) {
+export function CmSelect(props: SelectHTMLAttributes<HTMLSelectElement>) {
   const { className, ...rest } = props;
   return (
     <div className="relative">

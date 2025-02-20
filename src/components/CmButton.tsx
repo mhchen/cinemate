@@ -6,7 +6,7 @@ export type ButtonProps = {
   size?: 'md' | 'sm';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function Button(props: ButtonProps) {
+export function CmButton(props: ButtonProps) {
   const {
     className: classNameProp,
     variant = 'primary',

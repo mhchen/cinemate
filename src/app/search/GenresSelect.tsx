@@ -1,6 +1,6 @@
 'use client';
 
-import { Select } from '@/components/Select';
+import { CmSelect } from '@/components/CmSelect';
 import { GenresQueryQuery } from '@/gql/graphql';
 import { useRouterPush } from '@/hooks/useRouterPush';
 
@@ -20,13 +20,13 @@ export function GenresSelect({ genres }: GenresSelectProps) {
   };
 
   return (
-    <Select onChange={(e) => handleUpdateGenre(e.target.value)}>
+    <CmSelect onChange={(e) => handleUpdateGenre(e.target.value)}>
       <option value="">All genres</option>
       {genres.map((genre) => (
         <option key={genre.id} value={genre.title!}>
           {genre.title}
         </option>
       ))}
-    </Select>
+    </CmSelect>
   );
 }
