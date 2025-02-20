@@ -38,7 +38,6 @@ const genresQuery = graphql(/* GraphQL */ `
 `);
 export async function getGenresResultUncached() {
   const client = await getClient();
-  console.log('fetching genres');
   return await client.request(genresQuery);
 }
 

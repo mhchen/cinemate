@@ -19,7 +19,7 @@ export function GenresSelect({ genres }: GenresSelectProps) {
   }
 
   return (
-    <select className="bg-none cursor-pointer apperance-none border rounded py-2 px-4 border-gray-300" onChange={(e) => handleUpdateGenre(e.target.value)}>
+    <select className="bg-none cursor-pointer border rounded py-2 px-4 border-gray-300" onChange={(e) => handleUpdateGenre(e.target.value)}>
       <option value="">All genres</option>
       {genres.map((genre) => (
         <option key={genre.id} value={genre.title!}>{genre.title}</option>

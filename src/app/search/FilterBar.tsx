@@ -15,11 +15,11 @@ function GenresSelectServer() {
 
 export function FilterBar() {
   return (
-    <div className="flex gap-2 items-center">
+    <div className="flex gap-4 items-center">
       <IconFilter />
-      <Suspense>
+      <Suspense fallback={<div className="animate-pulse bg-gray-300 w-32 h-10 rounded" />}>
         <GenresSelectServer />
       </Suspense>
-    </div>
+    </div >
   );
 }

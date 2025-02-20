@@ -22,7 +22,7 @@ export default function Pagination({ pagination }: PaginationProps) {
   }
 
   return (
-    <nav className="flex justify-between md:justify-start items-center gap-8">
+    <nav className="flex justify-between md:justify-start items-center gap-4">
       <Button variant="neutral" size="small" disabled={page === 1} onClick={() => handlePageUpdate(page - 1)}>
         <IconChevronLeft />
       </Button>
