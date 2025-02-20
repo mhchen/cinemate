@@ -25,7 +25,7 @@ export default function MovieCard({ movie }: {
   return (
     <div className="rounded-2xl relative aspect-[2/3] overflow-hidden hover:scale-120">
       {movie.posterUrl ? (
-        <Image src={movie.posterUrl} alt="" fill />
+        <Image src={movie.posterUrl} alt="" fill className="object-cover" />
       ) : (
         <div className="bg-gray-300 inset-0 absolute" />
       )}
