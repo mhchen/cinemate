@@ -27,7 +27,6 @@ export default function Pagination({ pagination }: PaginationProps) {
     <nav className="flex justify-between md:justify-start items-center gap-4">
       <CmButton
         variant="neutral"
-        size="small"
         disabled={page === 1}
         onClick={() => handlePageUpdate(page - 1)}
       >
@@ -38,7 +37,6 @@ export default function Pagination({ pagination }: PaginationProps) {
       </div>
       <CmButton
         variant="neutral"
-        size="small"
         disabled={page === totalPages}
         onClick={() => handlePageUpdate(page + 1)}
       >

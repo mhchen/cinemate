@@ -84,7 +84,7 @@ export function MoviePoster({ movie }: { movie: Movie }) {
         alt=""
         fill
         className="object-cover"
-        sizes="250px"
+        sizes="225px"
       />
     );
   } else {
@@ -105,7 +105,7 @@ export default function MovieCard({
 
   return (
     <motion.div
-      className="rounded-2xl relative aspect-[2/3] overflow-hidden"
+      className="rounded-2xl relative aspect-[2/3] overflow-hidden w-full"
       layoutId={`movie-card-${movie.id}`}
       layout
       style={{
@@ -113,7 +113,7 @@ export default function MovieCard({
         zIndex: previousSelectedMovie?.id === movie.id ? 10 : 'auto',
       }}
     >
-      <button ref={ref} className="h-full text-left" onClick={onClick}>
+      <button ref={ref} className="text-left" onClick={onClick}>
         <MoviePoster movie={movie} />
         {movie.ratingValue && (
           <AnimatePresence initial={false}>

@@ -2,7 +2,9 @@ import { cx } from 'class-variance-authority';
 import Link from 'next/link';
 import { ComponentProps } from 'react';
 
-export function CmLink(props: ComponentProps<typeof Link>) {
+export type CmLinkProps = ComponentProps<typeof Link>;
+
+export function CmLink(props: CmLinkProps) {
   const { className: classNameProp, ...rest } = props;
   const className = cx(classNameProp, 'text-periwinkle-700', 'hover:underline');
 

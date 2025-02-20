@@ -23,6 +23,7 @@ import {
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'motion/react';
 import { IconX } from '@tabler/icons-react';
+import { CmButton } from '@/components/CmButton';
 
 type Movie = NonNullable<
   NonNullable<MoviesQueryQuery['movies']>['nodes']
@@ -43,7 +44,10 @@ export function SearchPageClient({ movies }: SearchPageClientProps) {
   if (movies.nodes.length === 0) {
     return (
       <EmptyState>
-        No movies found! Please try a different search or genre.
+        <div className="space-y-4 text-center">
+          <div>No movies found! Please try a different search or genre.</div>
+          <CmButton href="/search">Browse all movies</CmButton>
+        </div>
       </EmptyState>
     );
   }
