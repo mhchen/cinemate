@@ -1,7 +1,6 @@
 import { CmLink } from '@/components/CmLink';
 import { CmLogo } from '@/components/CmLogo';
 import { SearchForm } from '@/components/SearchForm';
-import Link from 'next/link';
 import { Suspense } from 'react';
 
 export default function Home() {

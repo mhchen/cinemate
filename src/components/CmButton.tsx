@@ -1,4 +1,4 @@
-import { cva, cx } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 import { ButtonHTMLAttributes } from 'react';
 import { CmLinkProps } from './CmLink';
 import Link from 'next/link';
