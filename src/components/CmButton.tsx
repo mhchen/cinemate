@@ -10,7 +10,14 @@ export type ButtonProps = {
 export function CmButton(props: ButtonProps) {
   const { className: classNameProp, variant = 'primary', ...rest } = props;
   const className = cva(
-    [classNameProp, 'rounded', 'transition-colors', 'disabled:opacity-30'],
+    [
+      classNameProp,
+      'py-2',
+      'px-3',
+      'rounded',
+      'transition-colors',
+      'disabled:opacity-30',
+    ],
     {
       variants: {
         variant: {

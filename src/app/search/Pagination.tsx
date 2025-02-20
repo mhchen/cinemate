@@ -33,7 +33,7 @@ export default function Pagination({ pagination }: PaginationProps) {
         <IconChevronLeft />
       </CmButton>
       <div>
-        <strong>{pagination.page}</strong> of {pagination.totalPages}
+        Page <strong>{pagination.page}</strong> of {pagination.totalPages}
       </div>
       <CmButton
         variant="neutral"
