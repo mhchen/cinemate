@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<img width="1695" alt="image" src="https://github.com/user-attachments/assets/37321a4f-d342-4b83-bc20-59f333cd29d2" />
 
-## Getting Started
+# Highlight something in your project that you thought was especially interesting or significant to your overall implementation.
 
-First, run the development server:
+I decided to try using the full power of Next.js server navigation/server actions as much as possible. I also wanted to use GraphQL, but I've never used the latter without Apollo. Leveraging server-side rendering to the fullest always makes things somewhat tricky though, which can be seen in having to split up elements like the search page and the genres select into server/client-specific functionality.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Actions-wise, everything was pretty straightforward to set up with `graphql-request` though, and I feel the final implementation of separate genre fetching from the main search results fetching, as well as the loading states, suspense boundaries, and caching between requests, ended up pretty clean and performant.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Note**: I ran into a long-standing Next.js issue with loading states, where [search params updates do not trigger loading states as expected](https://github.com/vercel/next.js/issues/53543). This also led to an issue with the animations implementation, where movies that are already loaded will move around in the grid to their final location, and it does not look good because there are usually only a few movies lasting between search results. I believe if the loading functionality were working properly, the search results grid would unmount and the loading state would show, avoiding this issue.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I wanted to call out a few practices that are certainly overkill for a project this size:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **The beginnings of a design system.** Tailwind would probably not be my choice for creating a design system from scratch, but I separated some of the lower-level components into the `src/components` directory so you could how I might think about creating a reusable design system.
+2. **Codegen for GraphQL types.** I feel end-to-end typing makes me a lot faster, so it was nice to be able to hook into a GraphQL endpoint to generate types for my project.
 
-## Learn More
+# Tell us what you are most pleased or proud of with your implementation.
 
-To learn more about Next.js, take a look at the following resources:
+I was excited to get a chance to try some interesting animations, which I've done with the way the movie grid items pop up into a modal/dialog version of the movie with some more details. It probably took half the overall time of implementation, and I am still intermediate with Motion for React, but it's hopefully a compelling result.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Given more time, what next feature or improvement would you like to add to your project?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Progressive image loading. The grid is very image-heavy and the giant, slow-loading images are very jarring.
+- Filtering by multiple genres
+- More robust design system
+- Dark mode
