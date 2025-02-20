@@ -3,10 +3,6 @@ import { Logo } from './Logo';
 import { Search } from './Search';
 import { Icon } from './Icon';
 
-export type TopBarProps = {
-  initialSearchValue: string;
-};
-
 export function TopBar() {
   return (
     <header className="px-4 md:px-8 py-4 border-b shadow flex items-center gap-12 justify-between">
