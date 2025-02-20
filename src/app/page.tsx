@@ -1,5 +1,7 @@
+import { CmLink } from '@/components/CmLink';
 import { Logo } from '@/components/Logo';
 import { Search } from '@/components/Search';
+import Link from 'next/link';
 import { Suspense } from 'react';
 
 export default function Home() {
@@ -9,6 +11,9 @@ export default function Home() {
       <Suspense>
         <Search />
       </Suspense>
+      <p>
+        Or <CmLink href="/search">browse all movies</CmLink>
+      </p>
     </div>
   );
 }

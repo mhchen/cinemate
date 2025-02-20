@@ -78,7 +78,15 @@ export function MovieRating({ ratingValue }: { ratingValue: number }) {
 
 export function MoviePoster({ movie }: { movie: Movie }) {
   if (movie.posterUrl) {
-    return <Image src={movie.posterUrl} alt="" fill className="object-cover" />;
+    return (
+      <Image
+        src={movie.posterUrl}
+        alt=""
+        fill
+        className="object-cover"
+        sizes="250px"
+      />
+    );
   } else {
     return <div className="bg-gray-300 inset-0 absolute" />;
   }

@@ -15,6 +15,7 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
+  DialogDescription,
   DialogOverlay,
   DialogPortal,
   DialogTitle,
@@ -62,6 +63,7 @@ export function SearchPageClient({ movies }: SearchPageClientProps) {
               forceMount
               className="inset-0 fixed flex items-center justify-center !pointer-events-none"
             >
+              <DialogDescription>Film information overlay</DialogDescription>
               <AnimatePresence initial={false}>
                 <motion.div
                   className="fixed rounded-lg w-full max-w-md overflow-hidden aspect-[2/3] z-10 pointer-events-auto"
