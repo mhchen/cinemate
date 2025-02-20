@@ -33,7 +33,7 @@ export function SearchForm() {
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      <CmButton className="absolute top-1/2 right-4 -translate-y-1/2 flex gap-2 items-center">
+      <CmButton className="absolute top-1/2 right-3 -translate-y-1/2 flex gap-2 items-center">
         <IconSearch size={16} />
         <span className="sr-only md:not-sr-only">Search</span>
       </CmButton>
