@@ -2,12 +2,7 @@ import { TopBar } from '@/components/TopBar';
 import { ReactNode } from 'react';
 import { FilterBar } from './FilterBar';
 
-export default function SearchLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
-
+export default function SearchLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <TopBar />
