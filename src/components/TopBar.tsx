@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Logo } from './Logo';
 import { Search } from './Search';
 import { Icon } from './Icon';
+import { Suspense } from 'react';
 
 export function TopBar() {
   return (
@@ -17,7 +18,9 @@ export function TopBar() {
         </Link>
       </div>
       <div className="w-full max-w-xl">
-        <Search />
+        <Suspense>
+          <Search />
+        </Suspense>
       </div>
     </header>
   );
