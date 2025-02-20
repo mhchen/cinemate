@@ -1,5 +1,6 @@
 'use client';
 
+import { Select } from "@/components/Select";
 import { GenresQueryQuery } from "@/gql/graphql";
 import { useRouterPush } from "@/hooks/useRouterPush";
 
@@ -19,11 +20,11 @@ export function GenresSelect({ genres }: GenresSelectProps) {
   }
 
   return (
-    <select className="bg-none cursor-pointer border rounded py-2 px-4 border-gray-300" onChange={(e) => handleUpdateGenre(e.target.value)}>
+    <Select onChange={(e) => handleUpdateGenre(e.target.value)}>
       <option value="">All genres</option>
       {genres.map((genre) => (
         <option key={genre.id} value={genre.title!}>{genre.title}</option>
       ))}
-    </select>
+    </Select>
   )
 }

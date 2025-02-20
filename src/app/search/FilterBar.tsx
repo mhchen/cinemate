@@ -17,7 +17,7 @@ export function FilterBar() {
   return (
     <div className="flex gap-4 items-center">
       <IconFilter />
-      <Suspense fallback={<div className="animate-pulse bg-gray-300 w-32 h-10 rounded" />}>
+      <Suspense fallback={<div className="animate-pulse bg-gray-200 w-32 h-10 rounded" />}>
         <GenresSelectServer />
       </Suspense>
     </div >

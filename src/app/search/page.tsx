@@ -28,7 +28,7 @@ export default function SearchPage({
   if (movies.nodes.length === 0) {
     return (
       <EmptyState>
-        No movies found! Please try a different search{genre ? ' or a different genre' : ''}
+        No movies found! Please try a different search{genre ? ' or genre' : ''}.
       </EmptyState>
     )
   }
