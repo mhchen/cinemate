@@ -1,6 +1,6 @@
-import { MoviesQueryQuery } from '@/gql/graphql'
+import { MoviesQueryQuery } from '@/gql/graphql';
 import { IconStarFilled } from '@tabler/icons-react';
-import Image from 'next/image'
+import Image from 'next/image';
 
 const ISO_RUNTIME_RE = /PT(?:(\d+)H)?(\d+)M/;
 
@@ -11,16 +11,19 @@ function isoDurationToRuntime(isoDuration: string | null | undefined) {
   if (!result) return null;
 
   const [, hours, minutes] = result;
-  const totalMinutes = (hours || 0) * 60 + minutes
+  const totalMinutes = (hours || 0) * 60 + minutes;
   return `${totalMinutes} min`;
 }
 
-
-export default function MovieCard({ movie }: {
-  movie: NonNullable<NonNullable<MoviesQueryQuery['movies']>['nodes']>[number]
+export default function MovieCard({
+  movie,
+}: {
+  movie: NonNullable<NonNullable<MoviesQueryQuery['movies']>['nodes']>[number];
 }) {
   const movieReleaseYear = movie.datePublished?.split('-')[0];
-  const movieSupplementalInfo = [movieReleaseYear, isoDurationToRuntime(movie.duration), movie.rating].filter(Boolean).join(' • ')
+  const movieSupplementalInfo = [movieReleaseYear, isoDurationToRuntime(movie.duration), movie.rating]
+    .filter(Boolean)
+    .join(' • ');
 
   return (
     <div className="rounded-2xl relative aspect-[2/3] overflow-hidden hover:scale-120">
@@ -37,12 +40,8 @@ export default function MovieCard({ movie }: {
       )}
       <div className="absolute bottom-0 w-full h-[40%] text-white bg-gradient-to-b from-black/0 via-black/60 to-black/60">
         <div className="absolute bottom-0 px-4 pb-4 space-y-1">
-          <div className="text-lg font-semibold leading-6">
-            {movie.title}
-          </div>
-          <div className="text-sm text-gray-300">
-            {movieSupplementalInfo}
-          </div>
+          <div className="text-lg font-semibold leading-6">{movie.title}</div>
+          <div className="text-sm text-gray-300">{movieSupplementalInfo}</div>
         </div>
       </div>
     </div>

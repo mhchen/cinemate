@@ -10,14 +10,14 @@ export function Search() {
   const searchParams = useSearchParams();
   const [searchValue, setSearchValue] = useState(searchParams.get('search') ?? '');
 
-  const routerPush = useRouterPush()
+  const routerPush = useRouterPush();
   const handleSearch = (e: FormEvent) => {
     e.preventDefault();
     routerPush({
       queryParams: {
-        search: searchValue
+        search: searchValue,
       },
-      pathname: '/search'
+      pathname: '/search',
     });
   };
 
@@ -33,9 +33,7 @@ export function Search() {
       />
       <Button className="absolute top-1/2 right-4 -translate-y-1/2 flex gap-2 items-center">
         <IconSearch size={16} />
-        <span className="sr-only md:not-sr-only">
-          Search
-        </span>
+        <span className="sr-only md:not-sr-only">Search</span>
       </Button>
     </form>
   );

@@ -1,5 +1,5 @@
-import MovieCardSkeleton from "./MovieCardSkeleton";
-import { MoviesGrid } from "./MoviesGrid";
+import MovieCardSkeleton from './MovieCardSkeleton';
+import { MoviesGrid } from './MoviesGrid';
 
 export default function Loading() {
   return (

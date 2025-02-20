@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export default function SearchPage({
   searchParams,
 }: {
-  searchParams: Promise<{ search: string; genre: string, page: string }>;
+  searchParams: Promise<{ search: string; genre: string; page: string }>;
 }) {
   const { search, genre, page: pageString } = use(searchParams);
   const { movies } = use(
@@ -26,11 +26,7 @@ export default function SearchPage({
   invariant(movies?.pagination, 'Movies result is malformed');
 
   if (movies.nodes.length === 0) {
-    return (
-      <EmptyState>
-        No movies found! Please try a different search{genre ? ' or genre' : ''}.
-      </EmptyState>
-    )
+    return <EmptyState>No movies found! Please try a different search{genre ? ' or genre' : ''}.</EmptyState>;
   }
 
   return (

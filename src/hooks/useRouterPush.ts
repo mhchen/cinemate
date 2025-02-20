@@ -1,9 +1,9 @@
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export type UseRouterPushParams = {
   queryParams: Record<string, string>;
   pathname?: string;
-}
+};
 
 export function useRouterPush() {
   const router = useRouter();
@@ -17,6 +17,6 @@ export function useRouterPush() {
     });
     const newPath = `${pathname ?? currentPathname}?${searchParams.toString()}`;
 
-    router.push(newPath)
-  }
+    router.push(newPath);
+  };
 }

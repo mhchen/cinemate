@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { ReactNode } from "react";
+import Image from 'next/image';
+import { ReactNode } from 'react';
 
 export default function EmptyState({ children }: { children: ReactNode }) {
   return (
@@ -7,9 +7,7 @@ export default function EmptyState({ children }: { children: ReactNode }) {
       <div className="w-full max-w-60 aspect-square relative">
         <Image src="/empty-state.svg" alt="" fill unoptimized />
       </div>
-      <div>
-        {children}
-      </div>
+      <div>{children}</div>
     </div>
   );
 }

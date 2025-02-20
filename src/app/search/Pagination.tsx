@@ -1,13 +1,13 @@
 'use client';
 
-import { Button } from "@/components/Button"
-import { MoviesQueryQuery } from "@/gql/graphql"
-import { useRouterPush } from "@/hooks/useRouterPush";
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react"
+import { Button } from '@/components/Button';
+import { MoviesQueryQuery } from '@/gql/graphql';
+import { useRouterPush } from '@/hooks/useRouterPush';
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 
 export type PaginationProps = {
   pagination: NonNullable<NonNullable<MoviesQueryQuery['movies']>['pagination']>;
-}
+};
 
 export default function Pagination({ pagination }: PaginationProps) {
   const { page, totalPages } = pagination;
@@ -17,9 +17,9 @@ export default function Pagination({ pagination }: PaginationProps) {
     routerPush({
       queryParams: {
         page: newPage.toString(),
-      }
-    })
-  }
+      },
+    });
+  };
 
   return (
     <nav className="flex justify-between md:justify-start items-center gap-4">
@@ -33,5 +33,5 @@ export default function Pagination({ pagination }: PaginationProps) {
         <IconChevronRight />
       </Button>
     </nav>
-  )
+  );
 }

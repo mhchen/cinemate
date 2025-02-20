@@ -23,6 +23,6 @@ export function TopBar() {
       <div className="w-full max-w-xl">
         <Search />
       </div>
-    </header >
+    </header>
   );
 }

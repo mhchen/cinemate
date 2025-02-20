@@ -45,10 +45,7 @@ export const getGenresResult = unstable_cache(getGenresResultUncached);
 
 const moviesQuery = graphql(/* GraphQL */ `
   query MoviesQuery($page: Int!, $search: String, $genre: String) {
-    movies(
-      pagination: { page: $page, perPage: 25 }
-      where: { search: $search, genre: $genre }
-    ) {
+    movies(pagination: { page: $page, perPage: 25 }, where: { search: $search, genre: $genre }) {
       nodes {
         id
         title
@@ -72,15 +69,7 @@ const moviesQuery = graphql(/* GraphQL */ `
   }
 `);
 
-export async function findMovies({
-  page,
-  search,
-  genre,
-}: {
-  page: number;
-  search?: string;
-  genre?: string;
-}) {
+export async function findMovies({ page, search, genre }: { page: number; search?: string; genre?: string }) {
   const client = await getClient();
 
   return client.request(moviesQuery, {

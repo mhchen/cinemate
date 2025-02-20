@@ -5,12 +5,11 @@ import invariant from 'tiny-invariant';
 import { GenresSelect } from './GenresSelect';
 
 function GenresSelectServer() {
-  const { genres } = use(getGenresResult())
+  const { genres } = use(getGenresResult());
 
   invariant(genres?.nodes, 'Malformed genres result');
 
   return <GenresSelect genres={genres.nodes} />;
-
 }
 
 export function FilterBar() {
@@ -20,6 +19,6 @@ export function FilterBar() {
       <Suspense fallback={<div className="animate-pulse bg-gray-200 w-32 h-10 rounded" />}>
         <GenresSelectServer />
       </Suspense>
-    </div >
+    </div>
   );
 }
