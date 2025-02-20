@@ -1,21 +1,16 @@
-import { getGenresResult } from '@/lib/auth';
+import { getGenresResult } from '@/lib/movies-api';
 import { IconFilter } from '@tabler/icons-react';
 import { Suspense, use } from 'react';
 import invariant from 'tiny-invariant';
+import { GenresSelect } from './GenresSelect';
 
-function GenresSelect() {
+function GenresSelectServer() {
   const { genres } = use(getGenresResult())
 
   invariant(genres?.nodes, 'Malformed genres result');
 
-  return (
-    <select className="cursor-pointer apperance-none border rounded py-2 px-4 border-gray-300">
-      <option value="">All genres</option>
-      {genres.nodes.map((genre) => (
-        <option key={genre.id} value={genre.id!}>{genre.title}</option>
-      ))}
-    </select>
-  )
+  return <GenresSelect genres={genres.nodes} />;
+
 }
 
 export function FilterBar() {
@@ -23,7 +18,7 @@ export function FilterBar() {
     <div className="flex gap-2 items-center">
       <IconFilter />
       <Suspense>
-        <GenresSelect />
+        <GenresSelectServer />
       </Suspense>
     </div>
   );

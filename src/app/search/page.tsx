@@ -1,5 +1,5 @@
 import { use } from 'react';
-import { findMovies } from '@/lib/auth';
+import { findMovies } from '@/lib/movies-api';
 import invariant from 'tiny-invariant';
 import MovieCard from './MovieCard';
 import { MoviesGrid } from './MoviesGrid';
@@ -8,19 +8,16 @@ import Pagination from './Pagination';
 export const dynamic = 'force-dynamic';
 
 export default function SearchPage({
-  params,
   searchParams,
 }: {
-  params: Promise<{ query: string }>;
-  searchParams: Promise<{ search: string; genre: string }>;
+  searchParams: Promise<{ search: string; genre: string, page: string }>;
 }) {
-  const resolvedSearchParams = use(searchParams);
-  console.log({ resolvedSearchParams });
-  const { query } = use(params);
+  const { search, genre, page: pageString } = use(searchParams);
   const { movies } = use(
     findMovies({
-      page: 1,
-      search: query,
+      page: Number(pageString) || 1,
+      search,
+      genre,
     })
   );
 

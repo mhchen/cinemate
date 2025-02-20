@@ -24,11 +24,17 @@ export default function MovieCard({ movie }: {
 
   return (
     <div className="rounded-2xl relative aspect-[2/3] overflow-hidden hover:scale-120">
-      <Image src={movie.posterUrl || ""} alt="" layout="fill" />
-      <div className="absolute top-4 right-4 py-1 px-2 rounded-full text-white bg-black/60 font-bold flex items-center gap-1 text-sm">
-        <IconStarFilled className="fill-yellow-500" size={12} />
-        {movie.ratingValue.toFixed(1)}
-      </div>
+      {movie.posterUrl ? (
+        <Image src={movie.posterUrl} alt="" layout="fill" />
+      ) : (
+        <div className="bg-gray-300 inset-0 absolute" />
+      )}
+      {movie.ratingValue && (
+        <div className="absolute top-4 right-4 py-1 px-2 rounded-full text-white bg-black/60 font-bold flex items-center gap-1 text-sm">
+          <IconStarFilled className="fill-yellow-500" size={12} />
+          {movie.ratingValue.toFixed(1)}
+        </div>
+      )}
       <div className="absolute bottom-0 w-full h-[40%] text-white bg-gradient-to-b from-black/0 via-black/60 to-black/60">
         <div className="absolute bottom-0 px-4 pb-4 space-y-1">
           <div className="text-lg font-semibold leading-6">
