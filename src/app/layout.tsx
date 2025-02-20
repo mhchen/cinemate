@@ -7,7 +7,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Moviez',
+  title: 'Cinemate',
   description: 'Search for your favorite movies',
 };
 
